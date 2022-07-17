@@ -1,0 +1,11 @@
+- How to include uncertainties in simulations
+- How to analyze network graph
+
+- How to place pressure sensors
+- How to create leakage events
+- How to detect leakage events
+
+- How to place quality sensors
+- How to create contamination events (using MSX)
+- How to detect contamination events 
+

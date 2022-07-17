@@ -1,0 +1,22 @@
+Compiler: g++
+
+Update code - paths
+--------------------
+dir_data = '../data/';
+dir_results = '../results/';
+
+https://github.com/OpenWaterAnalytics/EPANET-Matlab-Toolkit
+
+------------------------------------------------------
+postInstall
+-----------
+
+#!/usr/bin/env bash
+set -e
+curl -L https://github.com/OpenWaterAnalytics/EPANET-Matlab-Toolkit/archive/v2.2.1.tar.gz | tar xz
+cd EPANET-Matlab-Toolkit-2.2.1
+cd epanet_matlab_toolkit
+mv ./glnx/libepanet2.so libepanet.so
+matlab -nodisplay -r "addpath(genpath('$PWD')); savepath"
+
+------------------------------------------------------

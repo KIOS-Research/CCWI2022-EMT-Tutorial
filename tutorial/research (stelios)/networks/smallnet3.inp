@@ -1,0 +1,156 @@
+[TITLE]
+EPANET     Example     Network     1     
+A     simple     example     of     
+wall     reactions     are     included.     
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+ 1               	120.0000    	0           	                	;
+ 2               	120.0000    	70          	                	;
+ 3               	120.0000    	20          	                	;
+ 4               	110.0000    	10          	                	;
+ 5               	110.0000    	20          	                	;
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ 0               	200.0000    	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve        	Overflow
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ 01              	0               	1               	500         	450         	100         	0           	Open  	;
+ 12              	1               	2               	3200.0000   	450.0000    	100.0000    	0.0000      	Open  	;
+ 23              	2               	3               	1600.0000   	350.0000    	100.0000    	0.0000      	Open  	;
+ 24              	2               	4               	1600.0000   	250.0000    	100.0000    	0.0000      	Open  	;
+ 35              	3               	5               	1600.0000   	300.0000    	100.0000    	0.0000      	Open  	;
+ 45              	4               	5               	1600.0000   	250.0000    	100.0000    	0.0000      	Open  	;
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+
+
+[CONTROLS]
+
+
+
+
+[RULES]
+
+
+
+
+
+
+
+[ENERGY]
+ Global Efficiency  	75.0000
+ Global Price       	0
+ Demand Charge      	0.0000
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+ 1               	0.500000
+ 2               	0
+ 3               	0
+ 4               	0
+ 5               	0
+ 0               	1.000000
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1.00
+ Order Tank            	1.00
+ Order Wall            	1
+ Global Bulk           	-0.0500000
+ Global Wall           	0
+ Limiting Potential    	0
+ Roughness Correlation 	0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	24:00
+ Hydraulic Timestep 	1:00
+ Quality Timestep   	0:01
+ Pattern Timestep   	1:00
+ Pattern Start      	0:00
+ Report Timestep    	0:05
+ Report Start       	0:00 
+ Start ClockTime    	0:00:00
+ Statistic          	NONE
+
+[REPORT]
+ Status             	Yes
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	CMH
+ Headloss           	H-W
+ Specific Gravity   	1.000000
+ Viscosity          	1.000000
+ Trials             	40
+ Accuracy           	0.00100000
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0.00000000
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0000
+ Emitter Exponent   	0.5000
+ Quality            	Chemical mg/L
+ Diffusivity        	1.000000
+ Tolerance          	0.01000000
+
+[COORDINATES]
+;Node            	X-Coord           	Y-Coord
+1               	20.000            	70.000            
+2               	30.000            	70.000            
+3               	50.000            	70.000            
+4               	30.000            	40.000            
+5               	50.000            	40.000            
+0               	10.127            	69.964            
+
+[VERTICES]
+;Link            	X-Coord           	Y-Coord
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+
+[BACKDROP]
+  DIMENSIONS  	7.000             	6.000             	73.000            	94.000            
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]
