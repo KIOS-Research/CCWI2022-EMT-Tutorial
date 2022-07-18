@@ -517,7 +517,7 @@ classdef epanet <handle
                 j = 1;
                 for i=indices
                     [obj.Errcode, value(j)] = eval(['obj.', fun, '(i, propertie, obj.LibEPANET, obj.ph)']);
-                    error(obj.getError(obj.Errcode));
+%                     error(obj.getError(obj.Errcode));
                     j=j+1;
                 end
             else
@@ -529,7 +529,7 @@ classdef epanet <handle
                 j = 1;
                 for i=1:length(varargin{1})
                     [obj.Errcode, value(j)] = eval(['obj.', fun, '(varargin{1}(i), propertie, obj.LibEPANET, obj.ph)']);
-                    error(obj.getError(obj.Errcode));
+%                     error(obj.getError(obj.Errcode));
                     if ~isscalar(varargin{1})
                         j=j+1;
                     end
@@ -8943,6 +8943,8 @@ classdef epanet <handle
             k = 1;tstep = 1;
             pipecount = obj.getLinkPipeCount;
             valvecount = obj.getLinkValveCount;
+            nodecount = obj.getNodeJunctionCount;
+            noderescount = obj.getNodeReservoirCount;
             while (tstep>0)
                 t = obj.runHydraulicAnalysis;
                 if find(strcmpi(varargin, 'time'))
@@ -8966,7 +8968,7 @@ classdef epanet <handle
                     value.Head(k, :) = obj.getNodeHydaulicHead;
                 end
                 if find(strcmpi(varargin, 'tankvolume'))
-                    value.TankVolume(k, :) = obj.getNodeTankVolume;
+                    value.TankVolume(k, :) = [zeros(1, nodecount+noderescount) obj.getNodeTankVolume];
                 end
                 if find(strcmpi(varargin, 'flow'))
                     value.Flow(k, :) = obj.getLinkFlows;
