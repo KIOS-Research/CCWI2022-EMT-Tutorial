@@ -1,4 +1,5 @@
 %% Clear - Start Toolkit 
+% MATLAB R2022a
 
 clear; close('all'); clc;
 start_toolkit;
@@ -9,7 +10,7 @@ d = epanet(inpname);
 d.loadMSXFile(msxname);
 
 t_d = 1;
-duration_hrs = t_d*5;
+duration_hrs = t_d*24;
 duration_sec = duration_hrs*60*60;
 d.setTimeSimulationDuration(duration_sec);
 
@@ -51,5 +52,9 @@ SData = [];                 % No special node symbols
 movie_network(V,L,fig,movname,...
     quality,fps,PData,SData,d,bulk_specie_id,[],...
 hyd,labelvalues,labelstrings,ylabelinfo,titleinfo,colorbarposition);
+
+% Unload library
+d.unload;
+
 % Show the Movie
 winopen(movname);

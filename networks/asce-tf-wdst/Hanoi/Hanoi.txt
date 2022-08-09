@@ -1,12 +1,6 @@
-  Page 1                                    Sun Jul 17 19:23:42 2022
-
-  ******************************************************************
-  *                           E P A N E T                          *
-  *                   Hydraulic and Water Quality                  *
-  *                   Analysis for Pipe Networks                   *
-  *                         Version 2.2                            *
-  ******************************************************************
-  
-  Analysis begun Sun Jul 17 19:23:42 2022
-
-  Analysis ended Sun Jul 17 19:23:42 2022
+Hanoi
+No. of Pipes: 34
+No. of Nodes: 31
+No. of Reservoirs: 1
+No. of Tanks: 0
+Total system demand (average daily demand summed over all nodes): 4.79E+5 m3
